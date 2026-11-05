@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f6f5f0">
+    <meta name="description" content="AAMECC connects businesses, investors, entrepreneurs and institutions through trade, investment and strategic partnerships across Africa, Asia and the Middle East.">
+    <title>AAMECC — Partnerships without borders</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #14251e;
+        --muted: #64716a;
+        --paper: #f6f5f0;
+        --green: #1d5a40;
+        --lime: #d7ed9f;
+        --orange: #e58b50;
+        --line: #dedfd6;
+        --serif: Georgia, "Times New Roman", serif;
+        --sans: "DM Sans", sans-serif;
+        --display: "Manrope", sans-serif;
+      }
+
+      *, *::before, *::after { box-sizing: border-box; }
+      html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+      body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+      a { color: inherit; text-decoration: none; }
+      a:focus-visible, button:focus-visible { outline: 3px solid var(--orange); outline-offset: 4px; }
+      img { display: block; max-width: 100%; }
+      .wrap { width: min(1240px, calc(100% - 64px)); margin-inline: auto; }
+
+      .topline { min-height: 34px; padding: 8px 0; background: var(--ink); color: #e6e9e4; font-size: 11px; letter-spacing: .035em; }
+      .topline .wrap { display: flex; justify-content: space-between; gap: 12px; }
+      .topline a { color: #e9d8bd; }
+      .header { position: sticky; z-index: 10; top: 0; border-bottom: 1px solid rgb(20 37 30 / 9%); background: rgb(246 245 240 / 95%); backdrop-filter: blur(14px); }
+      .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 30px; }
+      .brand { display: inline-flex; align-items: center; gap: 11px; flex-shrink: 0; }
+      .brand-mark { width: 42px; height: 42px; display: grid; place-items: center; border: 1px solid #9cac95; border-radius: 50%; color: var(--green); font: 700 14px var(--display); letter-spacing: -.08em; }
+      .brand-name { font: 800 17px var(--display); letter-spacing: -.07em; }
+      .brand-name small { display: block; margin-top: 1px; color: var(--muted); font: 600 8px var(--sans); letter-spacing: .11em; }
+      .nav-links { display: flex; align-items: center; gap: clamp(17px, 2.4vw, 35px); margin: 0 0 0 auto; padding: 0; list-style: none; }
+      .nav-links a { font-size: 12px; font-weight: 600; transition: color .2s; }
+      .nav-links a:hover { color: var(--green); }
+      .nav-cta, .button { min-height: 45px; display: inline-flex; align-items: center; justify-content: center; gap: 16px; padding: 0 19px; border: 1px solid var(--green); border-radius: 3px; background: var(--green); color: white; font: 700 12px var(--sans); transition: background .2s, color .2s, transform .2s; }
+      .nav-cta:hover, .button:hover { transform: translateY(-2px); background: #143f2d; }
+      .menu-toggle { display: none; width: 42px; height: 42px; border: 1px solid var(--line); background: transparent; color: var(--ink); font-size: 20px; cursor: pointer; }
+
+      .hero { min-height: 590px; display: grid; grid-template-columns: 1fr .91fr; align-items: center; gap: 45px; padding-block: 74px 85px; }
+      .eyebrow { display: flex; align-items: center; gap: 10px; color: var(--green); font-size: 10px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; }
+      .eyebrow::before { width: 25px; height: 1px; background: var(--orange); content: ""; }
+      h1, h2, h3, p { margin-top: 0; }
+      h1 { max-width: 650px; margin: 25px 0 20px; font: 500 clamp(54px, 6.7vw, 91px)/.99 var(--display); letter-spacing: -.085em; }
+      h1 em { color: var(--green); font-family: var(--serif); font-weight: 400; }
+      .hero-copy { max-width: 485px; margin-bottom: 28px; color: var(--muted); font-size: 15px; line-height: 1.8; }
+      .hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 20px; }
+      .text-link { display: inline-flex; align-items: center; gap: 9px; font-size: 12px; font-weight: 700; }
+      .text-link span, .button span, .nav-cta span { transition: transform .2s; }
+      .text-link:hover span, .button:hover span, .nav-cta:hover span { transform: translateX(4px); }
+      .hero-note { display: flex; align-items: center; gap: 10px; margin-top: 48px; color: var(--muted); font-size: 10px; }
+      .note-dots { display: flex; }
+      .note-dots i { width: 15px; height: 15px; margin-left: -3px; border: 2px solid var(--paper); border-radius: 50%; background: var(--green); }
+      .note-dots i:nth-child(2) { background: var(--orange); }
+      .note-dots i:nth-child(3) { background: #9baa74; }
+      .hero-visual { position: relative; min-height: 420px; }
+      .hero-image { position: absolute; inset: 0 36px 29px 0; overflow: hidden; border-radius: 48% 48% 3px 3px; background: #243d35; }
+      .hero-image img { width: 100%; height: 100%; object-fit: cover; opacity: .8; }
+      .hero-image::after { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 48%, rgb(10 25 19 / 55%)); content: ""; }
+      .image-caption { position: absolute; right: 56px; bottom: 56px; left: 25px; z-index: 1; color: white; }
+      .image-caption strong { display: block; font: 600 17px var(--display); }
+      .image-caption span { display: block; margin-top: 5px; color: #d4dfd5; font-size: 10px; letter-spacing: .04em; }
+      .floating-card { position: absolute; right: 0; bottom: 0; width: 195px; padding: 21px; border: 1px solid #ebede5; background: var(--paper); box-shadow: 0 18px 55px rgb(30 45 34 / 11%); }
+      .floating-card small { color: var(--muted); font-size: 9px; letter-spacing: .12em; text-transform: uppercase; }
+      .floating-card strong { display: block; margin: 7px 0 4px; color: var(--green); font: 600 35px var(--display); letter-spacing: -.07em; }
+      .floating-card p { margin: 0; color: var(--muted); font-size: 10px; line-height: 1.5; }
+
+      .ribbon { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+      .ribbon-inner { min-height: 91px; display: grid; grid-template-columns: repeat(4, 1fr); align-items: center; }
+      .ribbon-item { min-height: 40px; display: flex; align-items: center; gap: 13px; padding-left: 24px; border-left: 1px solid var(--line); }
+      .ribbon-item:first-child { padding-left: 0; border-left: 0; }
+      .ribbon-icon { color: var(--green); font: 20px var(--serif); }
+      .ribbon-item strong { display: block; font: 700 11px var(--display); }
+      .ribbon-item small { display: block; margin-top: 3px; color: var(--muted); font-size: 9px; }
+
+      .section { padding-block: 105px; }
+      .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-bottom: 38px; }
+      .section-heading h2, .about-copy h2, .event-copy h2, .join-copy h2 { margin: 15px 0 0; font: 500 clamp(36px, 4.2vw, 55px)/1.07 var(--display); letter-spacing: -.075em; }
+      .section-heading > p { max-width: 360px; margin-bottom: 4px; color: var(--muted); font-size: 13px; line-height: 1.8; }
+      .pillars { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--line); }
+      .pillar { min-height: 223px; padding: 26px 23px; border-left: 1px solid var(--line); transition: background .2s; }
+      .pillar:first-child { border-left: 0; }
+      .pillar:hover { background: #eeefe7; }
+      .pillar-number { color: #9b9f91; font: 11px var(--sans); }
+      .pillar-icon { display: block; margin: 26px 0 16px; color: var(--green); font: 28px var(--serif); }
+      .pillar h3 { margin-bottom: 9px; font: 700 16px var(--display); letter-spacing: -.04em; }
+      .pillar p { margin: 0; color: var(--muted); font-size: 11px; line-height: 1.7; }
+
+      .about { display: grid; grid-template-columns: 1fr 1fr; gap: 85px; align-items: center; padding-block: 80px 105px; border-top: 1px solid var(--line); }
+      .about-visual { position: relative; min-height: 385px; overflow: hidden; background: #293d34; }
+      .about-visual img { width: 100%; height: 385px; object-fit: cover; opacity: .76; }
+      .about-stamp { position: absolute; right: 19px; bottom: 19px; left: 19px; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 18px; background: var(--paper); }
+      .about-stamp span { color: var(--muted); font-size: 10px; line-height: 1.55; }
+      .about-stamp strong { color: var(--green); font: 700 12px var(--display); white-space: nowrap; }
+      .about-copy > p:not(.eyebrow) { margin: 19px 0 23px; color: var(--muted); font-size: 13px; line-height: 1.9; }
+      .about-copy h2 { max-width: 500px; }
+      .about-copy .text-link { color: var(--green); }
+      .quote { margin-top: 34px; padding-left: 17px; border-left: 2px solid var(--orange); color: var(--ink); font: italic 15px/1.65 var(--serif); }
+
+      .event { display: grid; grid-template-columns: .9fr 1.1fr; min-height: 300px; background: #e8ebdf; }
+      .event-graphic { position: relative; min-height: 300px; overflow: hidden; background: var(--green); }
+      .event-graphic::before, .event-graphic::after { position: absolute; border: 1px solid rgb(230 239 217 / 30%); border-radius: 50%; content: ""; }
+      .event-graphic::before { width: 355px; height: 355px; top: -110px; left: -40px; }
+      .event-graphic::after { width: 260px; height: 260px; top: -64px; left: 8px; }
+      .event-symbol { position: absolute; top: 50%; left: 50%; color: var(--lime); font: 100px var(--serif); transform: translate(-50%, -50%); }
+      .event-year { position: absolute; right: 23px; bottom: 22px; color: #d7ed9f; font: 700 10px var(--sans); letter-spacing: .17em; }
+      .event-copy { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding: 44px clamp(27px, 6vw, 75px); }
+      .event-copy h2 { max-width: 420px; margin-top: 13px; font-size: clamp(34px, 4vw, 48px); }
+      .event-copy > p:not(.eyebrow) { max-width: 390px; margin: 15px 0 22px; color: var(--muted); font-size: 12px; line-height: 1.8; }
+      .event-copy .button { background: var(--green); }
+
+      .join { display: flex; align-items: center; justify-content: space-between; gap: 40px; margin-block: 105px; padding: 52px clamp(26px, 7vw, 85px); background: var(--ink); color: white; }
+      .join .eyebrow { color: var(--lime); }
+      .join-copy h2 { max-width: 570px; margin-top: 12px; font-size: clamp(37px, 5vw, 58px); }
+      .join-copy p { margin: 12px 0 0; color: #b7c1ba; font-size: 12px; }
+      .join .button { flex-shrink: 0; border-color: var(--lime); background: var(--lime); color: var(--ink); }
+      .join .button:hover { background: #e6f4c9; }
+
+      .news { padding-block: 0 105px; }
+      .news-card { display: grid; grid-template-columns: 1.2fr 1fr; min-height: 215px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+      .news-image { min-height: 215px; overflow: hidden; background: #d6dacd; }
+      .news-image img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
+      .news-card:hover .news-image img { transform: scale(1.03); }
+      .news-copy { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding: 30px clamp(22px, 4vw, 50px); }
+      .news-copy small { color: var(--green); font-size: 9px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+      .news-copy h3 { max-width: 390px; margin: 13px 0 19px; font: 600 clamp(21px, 3vw, 32px)/1.2 var(--display); letter-spacing: -.05em; }
+      .news-copy .text-link { color: var(--green); }
+
+      .footer { padding: 50px 0 24px; background: #ebece5; }
+      .footer-main { display: flex; align-items: flex-start; justify-content: space-between; gap: 35px; padding-bottom: 38px; }
+      .footer-intro { max-width: 315px; }
+      .footer-intro p { margin: 15px 0 0; color: var(--muted); font-size: 11px; line-height: 1.8; }
+      .footer-links { display: flex; flex-wrap: wrap; gap: 65px; }
+      .footer-col strong { display: block; margin-bottom: 13px; font: 700 11px var(--display); }
+      .footer-col a, .footer-col span { display: block; margin-top: 9px; color: var(--muted); font-size: 10px; }
+      .footer-col a:hover { color: var(--green); }
+      .footer-bottom { display: flex; justify-content: space-between; gap: 15px; padding-top: 17px; border-top: 1px solid #d5d8ce; color: var(--muted); font-size: 9px; }
+      .footer-bottom a { color: var(--green); }
+      .reveal { animation: rise .75s both; }
+      @keyframes rise { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+      @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+
+      @media (max-width: 900px) {
+        .wrap { width: min(100% - 44px, 700px); }
+        .nav-links { gap: 14px; }
+        .nav-links a { font-size: 11px; }
+        .nav-cta { min-height: 40px; padding-inline: 13px; font-size: 11px; }
+        .hero { min-height: 520px; gap: 24px; padding-block: 60px; }
+        .hero-visual { min-height: 370px; }
+        .ribbon-inner { grid-template-columns: repeat(2, 1fr); padding-block: 17px; gap: 17px 0; }
+        .ribbon-item:nth-child(3) { padding-left: 0; border-left: 0; }
+        .about { gap: 40px; }
+        .footer-links { gap: 28px; }
+      }
+      @media (max-width: 680px) {
+        .wrap { width: calc(100% - 36px); }
+        .topline { font-size: 9px; }
+        .topline .wrap { justify-content: center; }
+        .topline .topline-extra { display: none; }
+        .nav { min-height: 67px; }
+        .menu-toggle { display: block; margin-left: auto; }
+        .nav-cta { display: none; }
+        .nav-links { position: absolute; top: 66px; right: 0; left: 0; display: none; flex-direction: column; align-items: stretch; gap: 0; padding: 9px 18px 17px; border-bottom: 1px solid var(--line); background: var(--paper); }
+        .nav-links.is-open { display: flex; }
+        .nav-links a { display: block; padding: 12px 0; border-bottom: 1px solid var(--line); font-size: 13px; }
+        .nav-links li:last-child a { border-bottom: 0; }
+        .hero { grid-template-columns: 1fr; gap: 32px; padding-block: 54px 40px; }
+        h1 { max-width: 540px; margin-top: 19px; font-size: clamp(53px, 13vw, 76px); }
+        .hero-copy { font-size: 13px; }
+        .hero-note { margin-top: 24px; }
+        .hero-visual { min-height: 365px; }
+        .hero-image { right: 27px; }
+        .floating-card { width: 155px; padding: 16px; }
+        .floating-card strong { font-size: 29px; }
+        .ribbon-inner { gap: 14px 0; }
+        .ribbon-item { padding-left: 10px; gap: 8px; }
+        .ribbon-item strong { font-size: 10px; }
+        .ribbon-item small { font-size: 8px; }
+        .section { padding-block: 70px; }
+        .section-heading { display: block; margin-bottom: 27px; }
+        .section-heading h2, .about-copy h2 { font-size: 39px; }
+        .section-heading > p { margin-top: 14px; font-size: 12px; }
+        .pillars { grid-template-columns: repeat(2, 1fr); }
+        .pillar { min-height: 190px; padding: 19px 14px; border-top: 1px solid var(--line); }
+        .pillar:nth-child(odd) { border-left: 0; }
+        .pillar:nth-child(-n+2) { border-top: 0; }
+        .pillar-icon { margin: 19px 0 11px; }
+        .about { grid-template-columns: 1fr; gap: 34px; padding-block: 58px 70px; }
+        .about-visual, .about-visual img { min-height: 290px; height: 290px; }
+        .event { grid-template-columns: 1fr; }
+        .event-graphic { min-height: 195px; }
+        .event-copy { padding: 29px 22px 34px; }
+        .event-copy h2 { font-size: 39px; }
+        .join { align-items: flex-start; flex-direction: column; gap: 24px; margin-block: 70px; padding: 36px 22px; }
+        .join-copy h2 { font-size: 42px; }
+        .news { padding-bottom: 70px; }
+        .news-card { grid-template-columns: 1fr; }
+        .news-image { min-height: 180px; }
+        .news-copy { min-height: 177px; padding: 23px 4px; }
+        .footer-main { flex-direction: column; }
+        .footer-links { width: 100%; justify-content: space-between; gap: 18px; }
+        .footer-col { min-width: 90px; }
+        .footer-bottom { flex-direction: column; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="topline">
+      <div class="wrap">
+        <span>Connecting opportunity across Africa, Asia &amp; the Middle East</span>
+        <span class="topline-extra">Have a question? <a href="mailto:info@aamecc.org">info@aamecc.org</a></span>
+      </div>
+    </div>
+    <header class="header">
+      <nav class="nav wrap" aria-label="Main navigation">
+        <a class="brand" href="#home" aria-label="AAMECC home">
+          <span class="brand-mark" aria-hidden="true">A</span>
+          <span class="brand-name">AAMECC<small>CHAMBER OF COMMERCE</small></span>
+        </a>
+        <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-links">☰</button>
+        <ul class="nav-links" id="primary-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#focus">What we do</a></li>
+          <li><a href="#event">Events</a></li>
+          <li><a href="#insights">Insights</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a class="nav-cta" href="https://aameccdigital.com/register">Become a member <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero wrap" id="home">
+        <div class="reveal">
+          <p class="eyebrow">Africa · Asia · Middle East</p>
+          <h1>Partnerships <em>without</em> borders.</h1>
+          <p class="hero-copy">We bring businesses, investors and institutions together to create meaningful connections and lasting opportunities across three dynamic regions.</p>
+          <div class="hero-actions">
+            <a class="button" href="#focus">Discover what we do <span aria-hidden="true">→</span></a>
+            <a class="text-link" href="#about">Meet the chamber <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="hero-note">
+            <span class="note-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span>A bridge between markets, people &amp; possibility</span>
+          </div>
+        </div>
+        <div class="hero-visual" aria-label="Business leaders meeting">
+          <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&amp;fit=crop&amp;w=1100&amp;q=85" alt="Professionals collaborating around a table" fetchpriority="high">
+            <div class="image-caption">
+              <strong>Good business travels further.</strong>
+              <span>Stronger connections. Shared opportunity.</span>
+            </div>
+          </div>
+          <div class="floating-card">
+            <small>One connected future</small>
+            <strong>3 regions</strong>
+            <p>A shared platform for international cooperation.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="ribbon" aria-label="Our focus">
+        <div class="ribbon-inner wrap">
+          <div class="ribbon-item"><span class="ribbon-icon" aria-hidden="true">↗</span><span><strong>Trade &amp; commerce</strong><small>Open pathways to new markets</small></span></div>
+          <div class="ribbon-item"><span class="ribbon-icon" aria-hidden="true">◈</span><span><strong>Investment</strong><small>Connect capital with opportunity</small></span></div>
+          <div class="ribbon-item"><span class="ribbon-icon" aria-hidden="true">◎</span><span><strong>Partnerships</strong><small>Build lasting relationships</small></span></div>
+          <div class="ribbon-item"><span class="ribbon-icon" aria-hidden="true">✳</span><span><strong>Innovation</strong><small>Advance inclusive growth</small></span></div>
+        </div>
+      </section>
+
+      <section class="section wrap" id="focus">
+        <div class="section-heading">
+          <div><p class="eyebrow">Where connection creates value</p><h2>Make the next<br>move count.</h2></div>
+          <p>From a first introduction to a cross-border partnership, AAMECC helps turn ambition into forward motion.</p>
+        </div>
+        <div class="pillars">
+          <article class="pillar"><span class="pillar-number">01 / 04</span><span class="pillar-icon" aria-hidden="true">↗</span><h3>Trade facilitation</h3><p>Find new routes to market and the relationships to make them work.</p></article>
+          <article class="pillar"><span class="pillar-number">02 / 04</span><span class="pillar-icon" aria-hidden="true">◈</span><h3>Investment access</h3><p>Connect investors and enterprises with emerging opportunities.</p></article>
+          <article class="pillar"><span class="pillar-number">03 / 04</span><span class="pillar-icon" aria-hidden="true">◎</span><h3>Business networks</h3><p>Meet the people, institutions and partners who move ideas forward.</p></article>
+          <article class="pillar"><span class="pillar-number">04 / 04</span><span class="pillar-icon" aria-hidden="true">✳</span><h3>Shared growth</h3><p>Champion innovation and sustainable economic cooperation.</p></article>
+        </div>
+      </section>
+
+      <section class="about wrap" id="about">
+        <div class="about-visual">
+          <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&amp;fit=crop&amp;w=1000&amp;q=80" alt="Team sharing ideas around a laptop" loading="lazy">
+          <div class="about-stamp"><span>Better together.<br>Stronger across borders.</span><strong>AFRICA · ASIA · MIDDLE EAST</strong></div>
+        </div>
+        <div class="about-copy">
+          <p class="eyebrow">Who we are</p>
+          <h2>A trusted bridge between continents.</h2>
+          <p>The Africa Asia Middle East Chamber of Commerce is a platform for economic diplomacy, business networking and international cooperation. We bring the right people and institutions together to make cross-border engagement more accessible.</p>
+          <a class="text-link" href="https://aamecc.org/about-us/">Learn about our mission <span aria-hidden="true">↗</span></a>
+          <p class="quote">“Building the connections that make new opportunities possible.”</p>
+        </div>
+      </section>
+
+      <section class="event wrap" id="event">
+        <div class="event-graphic" aria-hidden="true"><span class="event-symbol">✳</span><span class="event-year">AAMECC · 2026</span></div>
+        <div class="event-copy">
+          <p class="eyebrow">On the calendar</p>
+          <h2>Women. Trade. Capital.</h2>
+          <p>Join the conversation at the Women, Trade &amp; Capital Forum 2026 — connecting leaders and opening doors to opportunity.</p>
+          <a class="button" href="https://aamecc.org/women-trade-capital/">Explore the forum <span aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+
+      <section class="join wrap">
+        <div class="join-copy">
+          <p class="eyebrow">Your next connection starts here</p>
+          <h2>Bring your ambition to the table.</h2>
+          <p>Join a growing network working across markets and industries.</p>
+        </div>
+        <a class="button" href="https://aameccdigital.com/register">Explore membership <span aria-hidden="true">↗</span></a>
+      </section>
+
+      <section class="news wrap" id="insights">
+        <div class="section-heading">
+          <div><p class="eyebrow">From across our network</p><h2>News &amp; insights.</h2></div>
+          <a class="text-link" href="https://aamecc.org/news-articles/">All stories <span aria-hidden="true">↗</span></a>
+        </div>
+        <a class="news-card" href="https://aamecc.org/matpit-farm-aamecc-overall-winner-awards-2026/">
+          <div class="news-image"><img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&amp;fit=crop&amp;w=1000&amp;q=80" alt="Sunlight over a productive green agricultural landscape" loading="lazy"></div>
+          <div class="news-copy"><small>Network news · Awards 2026</small><h3>Celebrating enterprise and impact across our network.</h3><span class="text-link">Read the latest story <span aria-hidden="true">↗</span></span></div>
+        </a>
+      </section>
+    </main>
+
+    <footer class="footer" id="contact">
+      <div class="wrap">
+        <div class="footer-main">
+          <div class="footer-intro">
+            <a class="brand" href="#home"><span class="brand-mark" aria-hidden="true">A</span><span class="brand-name">AAMECC<small>CHAMBER OF COMMERCE</small></span></a>
+            <p>Creating connections, unlocking opportunity and strengthening cooperation across Africa, Asia and the Middle East.</p>
+          </div>
+          <div class="footer-links">
+            <div class="footer-col"><strong>Explore</strong><a href="#about">About AAMECC</a><a href="#focus">What we do</a><a href="#event">Events</a><a href="https://aamecc.org/news-articles/">News &amp; articles</a></div>
+            <div class="footer-col"><strong>Get involved</strong><a href="https://aamecc.org/membership/">Membership</a><a href="https://aameccdigital.com/register">Become a member</a><a href="https://aamecc.org/contacts/">Contact us</a></div>
+            <div class="footer-col"><strong>Say hello</strong><a href="mailto:info@aamecc.org">info@aamecc.org</a><a href="tel:+254116000777">+254 116 000 777</a><span>Working across three regions</span></div>
+          </div>
+        </div>
+        <div class="footer-bottom"><span>© <span id="year">2026</span> Africa Asia Middle East Chamber of Commerce.</span><a href="#home">Back to top ↑</a></div>
+      </div>
+    </footer>
+    <script>
+      const menuButton = document.querySelector(".menu-toggle");
+      const navigation = document.querySelector("#primary-links");
+
+      menuButton.addEventListener("click", () => {
+        const isOpen = menuButton.getAttribute("aria-expanded") === "true";
+        menuButton.setAttribute("aria-expanded", String(!isOpen));
+        menuButton.setAttribute("aria-label", isOpen ? "Open navigation menu" : "Close navigation menu");
+        menuButton.textContent = isOpen ? "☰" : "×";
+        navigation.classList.toggle("is-open", !isOpen);
+      });
+
+      navigation.addEventListener("click", (event) => {
+        if (event.target.closest("a")) {
+          navigation.classList.remove("is-open");
+          menuButton.setAttribute("aria-expanded", "false");
+          menuButton.setAttribute("aria-label", "Open navigation menu");
+          menuButton.textContent = "☰";
+        }
+      });
+    </script>
+  </body>
+</html>
